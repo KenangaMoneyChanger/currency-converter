@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Currency Converter</h1>
+        
+        <div class="mode-selector">
+            <button id="manualMode" class="mode-btn active">Manual Rates</button>
+            <button id="sheetsMode" class="mode-btn">Google Sheets</button>
+        </div>
+
+        <div id="sheetsConfig" class="config-section hidden">
+            <label for="sheetsUrl">Google Sheets URL (published as CSV):</label>
+            <input type="text" id="sheetsUrl" placeholder="https://docs.google.com/spreadsheets/d/...">
+            <button id="loadSheets">Load Rates</button>
+            <p class="hint">Format: First column = Currency Code, Second column = Rate to USD</p>
+        </div>
+
+        <div class="converter">
+            <div class="input-group">
+                <label>From:</label>
+                <input type="number" id="amount" value="1" min="0" step="0.01">
+                <select id="fromCurrency"></select>
+            </div>
+
+            <button id="swap">⇅</button>
+
+            <div class="input-group">
+                <label>To:</label>
+                <input type="number" id="result" readonly>
+                <select id="toCurrency"></select>
+            </div>
+        </div>
+
+        <div class="rates-section">
+            <h2>Exchange Rates <span id="rateMode">(Manual)</span></h2>
+            <div id="ratesList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

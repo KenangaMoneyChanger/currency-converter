@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Rates - Kenanga Money Changer</title>
+    <link rel="stylesheet" href="all-rates-style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kenanga Money Changer</h1>
+        <p class="subtitle">All Exchange Rates</p>
+        
+        <div class="market-hours">
+            <p><strong>Online Market Hours:</strong> Mon - Fri 09:00 AM - 15:00 PM</p>
+            <p style="font-size: 12px;">(Closed on National Holidays & Weekends)</p>
+        </div>
+        
+        <div id="marketClosedBanner" class="market-closed-banner hidden">
+            <p>⚠️ Market is currently CLOSED. Please contact via WhatsApp</p>
+        </div>
+        
+        <div id="loadingStatus" class="loading-status">
+            <span class="spinner">⟳</span> Loading rates...
+        </div>
+        
+        <div id="successStatus" class="success-status hidden">
+            <span>✓</span> Rates loaded successfully!
+        </div>
+        
+        <div class="rates-table">
+            <div class="table-header">
+                <div class="currency">Currency</div>
+                <div class="buy-rate">We Buy</div>
+                <div class="sell-rate">We Sell</div>
+            </div>
+            <div id="ratesTableBody"></div>
+        </div>
+        
+        <button id="backBtn" class="back-btn">
+            <span>←</span>
+            <span>Back to Converter</span>
+        </button>
+    </div>
+
+    <script src="all-rates-script.js"></script>
+</body>
+</html>
