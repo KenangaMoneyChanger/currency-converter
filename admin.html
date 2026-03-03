@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Currency Rate Manager</title>
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Admin Panel - Exchange Rates</h1>
+        
+        <div class="mode-selector">
+            <button id="manualMode" class="mode-btn active">Manual Entry</button>
+            <button id="sheetsMode" class="mode-btn">Google Sheets</button>
+        </div>
+
+        <div id="sheetsConfig" class="config-section hidden">
+            <label for="sheetsUrl">Google Sheets URL (published as CSV):</label>
+            <input type="text" id="sheetsUrl" placeholder="https://docs.google.com/spreadsheets/d/...">
+            <button id="loadSheets">Load from Sheets</button>
+            <p class="hint">Sheet format: Column A = Currency Code, Column B = Buy Rate, Column C = Sell Rate</p>
+        </div>
+
+        <div class="whatsapp-config">
+            <h3>WhatsApp Business Configuration</h3>
+            <div class="whatsapp-form">
+                <input type="text" id="whatsappNumber" placeholder="WhatsApp Number (e.g., 6281234567890)">
+                <button id="saveWhatsapp">Save Number</button>
+            </div>
+            <p class="hint">Enter number with country code, no + or spaces (e.g., 6281234567890)</p>
+        </div>
+
+        <div class="market-status-config">
+            <h3>Market Status</h3>
+            <div class="status-toggle">
+                <label class="switch">
+                    <input type="checkbox" id="marketOpen" checked>
+                    <span class="slider"></span>
+                </label>
+                <span id="statusText" class="status-text open">Market is OPEN</span>
+            </div>
+            <p class="hint">Turn off when market is closed. Customers will see a closed message.</p>
+        </div>
+
+        <div class="add-currency">
+            <h3>Add New Currency</h3>
+            <div class="add-form">
+                <input type="text" id="newCurrency" placeholder="Code (e.g., USD)" maxlength="3">
+                <input type="number" id="newBuyRate" placeholder="Buy Rate" step="0.01" min="0">
+                <input type="number" id="newSellRate" placeholder="Sell Rate" step="0.01" min="0">
+                <button id="addBtn">Add Currency</button>
+            </div>
+            <p class="hint">For SAR: Enter initial rates, then update individual denominations below after adding</p>
+        </div>
+
+        <div class="rates-section">
+            <h2>Current Exchange Rates</h2>
+            <div id="ratesList"></div>
+        </div>
+
+        <div class="actions">
+            <button id="publishBtn" class="publish-btn">✓ Publish Rates to Customer App</button>
+            <p class="status" id="status"></p>
+        </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>
