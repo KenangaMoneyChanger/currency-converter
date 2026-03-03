@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenanga Money Changer - Currency Converter</title>
+    <link rel="stylesheet" href="customer-style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kenanga Money Changer</h1>
+        <p class="subtitle">Currency Converter</p>
+        
+        <div class="market-hours">
+            <p><strong>Market Hours:</strong> Mon - Fri 09:00 AM - 15:00 PM</p>
+            <p style="font-size: 12px;">(Closed on National Holidays & Weekends)</p>
+        </div>
+        
+        <div id="marketClosedBanner" class="market-closed-banner hidden">
+            <p>⚠️ Market is currently CLOSED. Please contact via WhatsApp</p>
+        </div>
+        
+        <div class="transaction-type">
+            <button id="buyBtn" class="type-btn active">We Buy</button>
+            <button id="sellBtn" class="type-btn">We Sell</button>
+        </div>
+
+        <div class="converter">
+            <div class="input-group">
+                <label>Amount:</label>
+                <input type="number" id="amount" value="1" min="0" step="0.01">
+            </div>
+
+            <div class="input-group">
+                <label>Currency:</label>
+                <select id="currency"></select>
+            </div>
+
+            <div class="result">
+                <div id="resultDisplay">Rp. 0</div>
+            </div>
+        </div>
+
+        <div id="rateInfo" class="rate-info"></div>
+
+        <button id="confirmBtn" class="confirm-btn">
+            <span>📱</span>
+            <span>Lock Rate via WhatsApp</span>
+        </button>
+
+        <button id="showRatesBtn" class="show-rates-btn">
+            <span>📊</span>
+            <span>Show All Rates</span>
+        </button>
+
+        <div class="disclaimer">
+            <p>Disclaimer: All rates shown are indicative and subject to change. Locking a rate does not guarantee confirmation. To confirm your booking, please proceed with payment via our Whatsapp Admin</p>
+        </div>
+    </div>
+
+    <script src="customer-script.js"></script>
+</body>
+</html>
