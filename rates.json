@@ -1,0 +1,12 @@
+{
+  "exchangeRates": {
+    "USD": { "buy": 15750, "sell": 15850 },
+    "SGD": { "buy": 11800, "sell": 11900 },
+    "JPY": { "buy": 105, "sell": 108 },
+    "EUR": { "buy": 17200, "sell": 17300 },
+    "AUD": { "buy": 10300, "sell": 10400 }
+  },
+  "whatsappNumber": "6281234567890",
+  "marketOpen": true,
+  "lastUpdated": "2026-03-03T21:00:00Z"
+}
